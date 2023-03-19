@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ta Te Ti</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+    <header class="header">
+        
+    </header>
+    <main class="main">
+        <section class="title">
+            <p>TA</p>
+            <p>TE</p>
+            <p>TI</p>
+        </section>
+        <section class="main__game">   
+            <div class="jugadores">
+                <input id="playerX" type="text" placeholder="Jugador X">
+                <input id="player0" type="text" placeholder="Jugador 0">
+            </div>
+            <div id="board" class="main__board">
+            </div>
+            <div class="main__controls">
+                <button class="main__button" id="btnRestart">Reiniciar</button>
+            </div>
+        </section>
+        <section class="info">
+            <button id="info">Info</button>
+        </section>
+        <section class="resultados">
+            <h2>RESULTADOS</h2>
+            <p id="jugador1"></p>
+            <p id="jugador2"></p>
+            <p id="empate"></p>
+        </section>
+    </main>
+    <footer class="footer">
+
+    </footer>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script defer src="./src/app.js"></script>
+</body>
+
+</html>
