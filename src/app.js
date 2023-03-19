@@ -162,11 +162,14 @@ function checkMove(index, value) {
     swal({ title: `Ganó el jugador ${currentPlayer== 1 ? namePlayerX : namePlayer0}`, icon: "success" });
     if (currentPlayer === 1) {
       playerXWins++;
+      let index = playersX.findIndex((player) => player.name === namePlayerX);
+      console.log(playerXWins)
       playersX[index].wins = playerXWins;
+      
       localStorage.setItem("X", JSON.stringify(playersX));
     } else {
       player0Wins++;
-      let index = playersX.findIndex((player) => player.name === namePlayerX);
+      let index = players0.findIndex((player) => player.name === namePlayer0);
       players0[index].wins = player0Wins;
       localStorage.setItem("0", JSON.stringify(players0));
     }
