@@ -27,11 +27,11 @@ function getNamesLocal(){
 }
 
 function getScoreLocal(){
-    let localScoreX = JSON.parse(localStorage.getItem("X")) 
+    let localScoreX = JSON.parse(localStorage.getItem("X"))
     let localScore0 = JSON.parse(localStorage.getItem("0"))
 
-    playerXWins = localScoreX[0].wins ?? "X"
-    player0Wins = localScore0[0].wins ?? "0"
+    localScoreX == null ? playerXWins = localScoreX[0].wins : 0
+    localScore0 == null ? player0Wins = localScore0[0].wins : 0
 }
 
 function players(name, wins) {
