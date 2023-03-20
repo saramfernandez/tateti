@@ -30,8 +30,8 @@ function getScoreLocal(){
     let localScoreX = JSON.parse(localStorage.getItem("X"))
     let localScore0 = JSON.parse(localStorage.getItem("0"))
 
-    localScoreX !== null ? playerXWins = localScoreX[0].wins : 0
-    localScore0 !== null ? player0Wins = localScore0[0].wins : 0
+    localScoreX !== null ? playerXWins = localScoreX[0].wins : playerXWins
+    localScore0 !== null ? player0Wins = localScore0[0].wins : player0Wins
 }
 
 function players(name, wins) {
@@ -163,15 +163,17 @@ function checkMove(index, value) {
     if (currentPlayer === 1) {
       playerXWins++;
       let index = playersX.findIndex((player) => player.name === namePlayerX);
-      console.log(playerXWins)
-      playersX[index].wins = playerXWins;
-      
-      localStorage.setItem("X", JSON.stringify(playersX));
+      if(index !== -1){
+        playersX[index].wins = playerXWins;
+        localStorage.setItem("X", JSON.stringify(playersX));
+      }
     } else {
       player0Wins++;
       let index = players0.findIndex((player) => player.name === namePlayer0);
-      players0[index].wins = player0Wins;
-      localStorage.setItem("0", JSON.stringify(players0));
+      if(index !== -1){
+        players0[index].wins = player0Wins;
+        localStorage.setItem("0", JSON.stringify(players0));
+      }
     }
     resultados();
   } else if (currentPlayer === 1) {
